@@ -1,143 +1,596 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
 
-/* --- Estilos Generales --- */
-body {
-    font-family: sans-serif;
-    margin: 70px;
-    margin-top:0;
-    padding: 2em;
-    background-color: #f4f4f4;
-}
+/*
+   El asterisco selecciona todos los elementos.
+   Quitamos los márgenes que el navegador coloca
+   automáticamente.
+*/
 
-
-h1, h2 {
-    font-family: 'Space Mono';
-    color: #333;
-}
-
-h3{
-    font-family: 'Open Sans';
-    font-size: 1em;
-}
-
-/* --- Contenedor Principal --- */
-#container {
-    display: grid;
-    /* Define 2 columnas: la primera ocupa 1 fracción, la segunda 2 fracciones */
-    grid-template-columns: 1fr 2fr;
-    gap: 5em; /* Espacio entre las columnas */
-    align-items: start; /* Alinea los items al inicio */
-}
-
-/* --- Columna Izquierda: Intro --- */
-.intro {
-    /* Por defecto, se ubica en la primera columna del grid */
-    display: flex;
-    flex-direction: column; /* Organiza los elementos internos en una columna */
-    justify-content: center; /* Centra el contenido verticalmente */
-}
-
-.intro p {
-    /* El párrafo ya usa el ancho de su contenedor por defecto */
-    font-family: 'Open Sans';
-    text-align: justify;
-    line-height: 1.6;
-}
-
-.intro a {
-    /* El ancla del botón se centrará gracias al 'align-self' */
-    align-self: center; /* Centra este elemento específico en el eje transversal */
-    margin-top: 1em;
-}
-
-.intro button {
-    font-family: 'Space Mono';
-    font-size: 1em;
-    padding: 15px 45px;
-    margin-top: 30px;
-    border: none;
-    background-color: #a588f4;
-    color: #000;
- 
-    cursor: pointer;
-    border-radius: 50px;
-    
-}
-
-.intro button:hover {
-    background: #000; ;
-    color: white;
-
-}
-
-
-/* Columna Derecha: Proyectos */
-.proyectos {
-    display: flex;
-    flex-direction: column;
-    /* Por defecto, se ubica en la segunda columna del grid */
-}
-
-/* --- Galería de Proyectos --- */
-.galeria {
-    display: grid;
-    /* Define 3 columnas de igual tamaño */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em; /* Espacio entre las tarjetas */
-}
-
-/* --- Tarjetas Individuales --- */
-.tarjeta {
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
-}
-
-.tarjeta a {
-    /* El ancla ocupa todo el espacio de su columna en la galería */
-    display: block; /* Permite que el ancla ocupe todo el espacio */
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease-in-out;
-}
-
-.tarjeta a:hover {
-    filter: brightness(70%); /* Aplica un filtro de brillo al 70% (más oscuro) */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-}
-
-.tarjeta img {
-    /* La imagen se ajusta al ancho del ancla */
-    width: 100%;
-    display: block; /* Elimina espacios en blanco debajo de la imagen */
-}
-
-.tarjeta h3 {
-    text-align: center;
-    padding: 0.5em 0;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 
-/* --- Media Query para pantallas pequeñas --- */
+/* =========================================================
+   FUENTES
+   ========================================================= */
+
+/*
+   FUENTE HORIZON
+
+   Se utiliza en los dos títulos principales del sitio.
+*/
+
+@font-face {
+    font-family: "Horizon";
+    src: url("fonts/Horizon.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*
+   FUENTE OSWALD
+
+   Se utiliza para el resto de los textos.
+*/
+
+@font-face {
+    font-family: "Oswald";
+    src: url("fonts/Oswald-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* =========================================================
+   CUERPO DE LA PÁGINA
+   ========================================================= */
+
+body {
+
+    /* Imagen de fondo */
+    background-image: url("assets/fondo.png");
+
+    /* La imagen ocupa todo el espacio disponible */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+
+    /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+
+    /* Mantiene el fondo fijo al desplazar la página */
+    background-attachment: fixed;
+
+    /* Color de respaldo si la imagen no carga */
+    background-color: #f7f2f8;
+
+    /* Fuente general */
+    font-family: "Oswald", sans-serif;
+
+    /* Color general */
+    color: #29203b;
+
+    /* Evita el desplazamiento horizontal */
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+header {
+
+    /* Espacio desde la parte superior */
+    padding-top: 28px;
+
+    /* Centra el título */
+    text-align: center;
+
+    width: 100%;
+
+}
+
+
+header h1 {
+
+    /* Fuente del título principal */
+    font-family: "Horizon", sans-serif;
+
+    /* Tamaño del título */
+    font-size: 56px;
+
+    /* Peso de la fuente */
+    font-weight: normal;
+
+    /* Color morado oscuro */
+    color: #302140;
+
+    /* Separación entre letras */
+    letter-spacing: 1px;
+
+    /* Evita que el título se divida en dos líneas */
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   INFORMACIÓN SUPERIOR
+   ========================================================= */
+
+#informacion {
+
+    /* Coloca los dos cuadros horizontalmente */
+    display: flex;
+
+    /* Separación entre los cuadros */
+    gap: 32px;
+
+    /* Centra los cuadros horizontalmente */
+    justify-content: center;
+
+    /* Alineación superior */
+    align-items: flex-start;
+
+    /* Ancho total de la sección */
+    width: 88%;
+
+    /* Centra la sección y establece el margen superior */
+    margin: 62px auto 0;
+
+}
+
+
+/* =========================================================
+   CUADROS DE TEXTO
+   ========================================================= */
+
+.texto-informacion {
+
+    /* Ancho de cada cuadro */
+    width: 46%;
+
+    /* Fondo translúcido */
+    background-color: rgba(231, 220, 237, 0.60);
+
+    /* Espacio interior */
+    padding: 10px 13px;
+
+}
+
+
+/* Texto de los cuadros */
+
+.texto-informacion p {
+
+    /* Tamaño del texto */
+    font-size: 20px;
+
+    /* Espacio entre líneas */
+    line-height: 1.55;
+
+    /* Grosor de la fuente */
+    font-weight: 400;
+
+    /* Color del texto */
+    color: #302140;
+
+    /* Separación entre párrafos */
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================================
+   WIKI DEL PROYECTO
+   ========================================================= */
+
+#wiki {
+
+    /* Centra el elemento horizontalmente */
+    display: flex;
+
+    justify-content: center;
+
+    /* Separación desde los cuadros de información */
+    margin-top: 88px;
+
+}
+
+
+/* =========================================================
+   FORMA DEL WIKI
+   ========================================================= */
+
+.boton-wiki {
+
+    /* Dimensiones originales */
+    width: 330px;
+    height: 90px;
+
+    /* Color morado */
+    background-color: #302140;
+
+    /* Centra el texto dentro de la forma */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Apariencia del texto */
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+
+    /* Elimina el subrayado del enlace */
+    text-decoration: none;
+
+    /* Indica que el elemento se puede pulsar */
+    cursor: pointer;
+
+    /* Forma hexagonal */
+    clip-path: polygon(
+        14% 0%,
+        86% 0%,
+        100% 50%,
+        86% 100%,
+        14% 100%,
+        0% 50%
+    );
+
+    /* Sombra original */
+    filter: drop-shadow(
+        8px 8px 0px rgba(41, 32, 59, 0.25)
+    );
+
+    /* Transición suave del movimiento */
+    transition: transform 0.25s ease;
+
+}
+
+
+/* =========================================================
+   EFECTO HOVER DEL WIKI
+   ========================================================= */
+
+/*
+   Al pasar el cursor sobre el banner,
+   aumenta ligeramente de tamaño.
+*/
+
+.boton-wiki:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================================================
+   TÍTULO "MIS PROYECTOS DE P5.JS"
+   ========================================================= */
+
+#titulo-proyectos {
+
+    /* Ancho del título */
+    width: 92%;
+
+    /* Centra la sección y establece el margen superior */
+    margin: 92px auto 0;
+
+    /* Fondo morado */
+    background-color: #302140;
+
+    /* Espacio interior */
+    padding: 8px 20px;
+
+    /* Extremos inclinados */
+    clip-path: polygon(
+        3% 0%,
+        100% 0%,
+        97% 100%,
+        0% 100%
+    );
+
+    /* Centra el texto */
+    text-align: center;
+
+}
+
+
+/* Texto del título */
+
+#titulo-proyectos h2 {
+
+    /* Fuente Horizon */
+    font-family: "Horizon", sans-serif;
+
+    /* Tamaño del título */
+    font-size: 35px;
+
+    /* Peso de la fuente */
+    font-weight: normal;
+
+    /* Color claro */
+    color: #e7dced;
+
+    /* Separación entre letras */
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   GRILLA DE PROYECTOS
+   ========================================================= */
+
+#proyectos {
+
+    /* Crea una cuadrícula */
+    display: grid;
+
+    /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Separación horizontal */
+    column-gap: 65px;
+
+    /* Separación vertical */
+    row-gap: 55px;
+
+    /* Ancho de la cuadrícula */
+    width: 82%;
+
+    /* Centra la cuadrícula */
+    margin: 35px auto 80px;
+
+}
+
+
+/* =========================================================
+   CADA PROYECTO
+   ========================================================= */
+
+.proyecto {
+
+    /* Altura de cada espacio de proyecto */
+    height: 215px;
+
+    /* Centra la estrella */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   ESTRELLAS Y BOTONES DE PROYECTOS
+   ========================================================= */
+
+/*
+   Cada estrella es ahora un enlace <a>.
+   Conservamos las dimensiones y la forma originales.
+*/
+
+.estrella {
+
+    /* Tamaño de la estrella */
+    width: 180px;
+    height: 180px;
+
+    /* Color original */
+    background-color: #302140;
+
+    /* Centra el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Apariencia del texto */
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+
+    /* Elimina el subrayado del enlace */
+    text-decoration: none;
+
+    /* Indica que se puede pulsar */
+    cursor: pointer;
+
+    /*
+       Forma irregular original de estrella.
+       No se modifica ninguno de sus puntos.
+    */
+
+    clip-path: polygon(
+
+        50% 0%,
+        56% 20%,
+        64% 5%,
+        66% 23%,
+        78% 8%,
+        75% 27%,
+        93% 17%,
+        83% 34%,
+        100% 31%,
+        84% 43%,
+        100% 50%,
+        83% 56%,
+        96% 68%,
+        78% 65%,
+        88% 84%,
+        70% 74%,
+        73% 96%,
+        58% 79%,
+        50% 100%,
+        43% 80%,
+        31% 96%,
+        33% 76%,
+        15% 87%,
+        23% 68%,
+        4% 74%,
+        18% 57%,
+        0% 50%,
+        18% 42%,
+        4% 28%,
+        24% 32%,
+        14% 12%,
+        32% 25%,
+        33% 5%,
+        44% 21%
+    );
+
+    /* Sombra original de las estrellas */
+    filter: drop-shadow(
+        7px 8px 0px rgba(41, 32, 59, 0.35)
+    );
+
+    /*
+       NUEVO EFECTO:
+
+       Suaviza el cambio de tamaño al pasar
+       el cursor sobre cada estrella.
+    */
+
+    transition: transform 0.25s ease;
+
+}
+
+
+/* =========================================================
+   EFECTO HOVER DE LAS ESTRELLAS
+   ========================================================= */
+
+/*
+   Al pasar el cursor sobre una estrella,
+   esta aumenta su tamaño un 4 %.
+
+   Al retirar el cursor, vuelve suavemente
+   a su tamaño original.
+*/
+
+.estrella:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================================================
+   TEXTO DE LAS ESTRELLAS
+   ========================================================= */
+
+.estrella span {
+
+    /* Mantiene el texto centrado */
+    display: block;
+
+    /* Altura de línea */
+    line-height: 1.2;
+
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA PANTALLAS MEDIANAS
+   ========================================================= */
+
 @media (max-width: 900px) {
-    
-    /* Ajusta los márgenes del body para aprovechar el espacio */
-    body {
-        margin: 20px;
-        padding: 1em;
+
+    /* Reducimos el título principal */
+
+    header h1 {
+
+        font-size: 45px;
+
+        white-space: normal;
+
     }
 
-    /* Cambia el contenedor principal a una sola columna */
-    #container {
-        grid-template-columns: 1fr;
+
+    /*
+       Los cuadros de información
+       pasan a estar uno debajo del otro.
+    */
+
+    #informacion {
+
+        flex-direction: column;
+
+        align-items: center;
+
     }
 
-    /* Cambia la galería de proyectos a una sola columna */
-    .galeria {
-        grid-template-columns: 1fr;
+
+    .texto-informacion {
+
+        width: 80%;
+
     }
+
+
+    /* Dos proyectos por fila */
+
+    #proyectos {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    #titulo-proyectos h2 {
+
+        font-size: 32px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Reducimos el título principal */
+
+    header h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    /* Un proyecto por fila */
+
+    #proyectos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .texto-informacion {
+
+        width: 90%;
+
+    }
+
+
+    #titulo-proyectos h2 {
+
+        font-size: 25px;
+
+    }
+
 }
