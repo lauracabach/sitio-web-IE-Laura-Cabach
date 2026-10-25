@@ -20,7 +20,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: "Oswald";
     src: url("fonts/Oswald-Regular.ttf") format("truetype");
@@ -30,29 +29,21 @@
 
 
 /* =========================================================
-   CUERPO DE LA PÁGINA
+   CUERPO
    ========================================================= */
 
 body {
-
     background-image: url("assets/fondo.png");
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
-
     background-color: #f7f2f8;
 
     font-family: "Oswald", sans-serif;
-
     color: #29203b;
 
     overflow-x: hidden;
-
 }
 
 
@@ -61,29 +52,18 @@ body {
    ========================================================= */
 
 header {
-
     padding-top: 28px;
-
     text-align: center;
-
     width: 100%;
 }
 
-
 header h1 {
-
     font-family: "Horizon", sans-serif;
-
     font-size: 56px;
-
     font-weight: normal;
-
     color: #302140;
-
     letter-spacing: 1px;
-
     white-space: nowrap;
-
 }
 
 
@@ -92,19 +72,12 @@ header h1 {
    ========================================================= */
 
 #informacion {
-
     display: flex;
-
     gap: 32px;
-
     justify-content: center;
-
     align-items: flex-start;
-
     width: 88%;
-
     margin: 62px auto 0;
-
 }
 
 
@@ -113,28 +86,17 @@ header h1 {
    ========================================================= */
 
 .texto-informacion {
-
     width: 46%;
-
     background-color: rgba(231, 220, 237, 0.60);
-
     padding: 10px 13px;
-
 }
 
-
 .texto-informacion p {
-
     font-size: 20px;
-
     line-height: 1.55;
-
     font-weight: 400;
-
     color: #302140;
-
     margin-bottom: 5px;
-
 }
 
 
@@ -143,30 +105,16 @@ header h1 {
    ========================================================= */
 
 #wiki {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     position: relative;
-
     margin-top: 88px;
-
 }
 
-
-/* =========================================================
-   SILUETAS DEL BOTÓN WIKI
-   ========================================================= */
-
 .silueta-wiki {
-
     width: 330px;
-
     height: 90px;
-
     position: absolute;
 
     clip-path: polygon(
@@ -177,62 +125,35 @@ header h1 {
         14% 100%,
         0% 50%
     );
-
 }
-
-
-/* Primera silueta del Wiki */
 
 .wiki-sombra-1 {
-
     background-color: rgba(98, 83, 109, 0.30);
-
     transform: translate(5px, 5px);
-
     z-index: 1;
-
 }
-
-
-/* Segunda silueta del Wiki */
 
 .wiki-sombra-2 {
-
     background-color: rgba(136, 123, 145, 0.16);
-
     transform: translate(9px, 9px);
-
     z-index: 0;
-
 }
 
-
-/* =========================================================
-   BOTÓN WIKI
-   ========================================================= */
-
 .boton-wiki {
-
     width: 330px;
-
     height: 90px;
 
     background-color: #302140;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     color: white;
-
     font-size: 20px;
-
     font-weight: 700;
 
     text-decoration: none;
-
     cursor: pointer;
 
     clip-path: polygon(
@@ -245,35 +166,25 @@ header h1 {
     );
 
     position: relative;
-
     z-index: 3;
 
     transition: transform 0.25s ease;
-
 }
 
-
-/* Efecto hover del Wiki */
-
 .boton-wiki:hover {
-
     transform: scale(1.04);
-
 }
 
 
 /* =========================================================
-   TÍTULO "MIS PROYECTOS DE P5.JS"
+   TÍTULO DE PROYECTOS
    ========================================================= */
 
 #titulo-proyectos {
-
     width: 92%;
-
     margin: 92px auto 0;
 
     background-color: #302140;
-
     padding: 8px 20px;
 
     clip-path: polygon(
@@ -284,22 +195,14 @@ header h1 {
     );
 
     text-align: center;
-
 }
 
-
 #titulo-proyectos h2 {
-
     font-family: "Horizon", sans-serif;
-
     font-size: 35px;
-
     font-weight: normal;
-
     color: #e7dced;
-
     letter-spacing: 1px;
-
 }
 
 
@@ -308,19 +211,13 @@ header h1 {
    ========================================================= */
 
 #proyectos {
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     column-gap: 65px;
-
     row-gap: 75px;
 
     width: 82%;
-
     margin: 35px auto 80px;
-
 }
 
 
@@ -329,24 +226,14 @@ header h1 {
    ========================================================= */
 
 .proyecto {
-
-    /*
-        Aumentamos ligeramente la altura para dejar
-        espacio para el texto debajo de la estrella.
-    */
-
     height: 250px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: flex-start;
-
     align-items: center;
 
     position: relative;
-
 }
 
 
@@ -355,80 +242,57 @@ header h1 {
    ========================================================= */
 
 .estrella {
-
     width: 180px;
-
     height: 180px;
 
     background-color: #302140;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     color: white;
-
     font-size: 15px;
-
     font-weight: 500;
-
     text-align: center;
 
     text-decoration: none;
-
     cursor: pointer;
 
     clip-path: polygon(
-
         50% 0%,
         54% 30%,
-
         68% 7%,
         61% 34%,
-
         91% 18%,
         69% 43%,
-
         100% 37%,
         73% 51%,
-
         94% 63%,
         67% 59%,
-
         80% 91%,
         58% 67%,
-
         62% 100%,
         50% 72%,
-
         42% 97%,
         41% 68%,
-
         17% 88%,
         32% 60%,
-
         0% 64%,
         28% 53%,
-
         4% 39%,
         30% 45%,
-
         15% 16%,
         39% 35%,
-
         50% 0%
     );
 
     position: relative;
-
     z-index: 3;
 
     flex-shrink: 0;
 
     transition: transform 0.25s ease;
-
 }
 
 
@@ -437,273 +301,146 @@ header h1 {
    ========================================================= */
 
 .silueta {
-
     width: 180px;
-
     height: 180px;
 
     position: absolute;
-
     top: 0;
 
     clip-path: polygon(
-
         50% 0%,
         54% 30%,
-
         68% 7%,
         61% 34%,
-
         91% 18%,
         69% 43%,
-
         100% 37%,
         73% 51%,
-
         94% 63%,
         67% 59%,
-
         80% 91%,
         58% 67%,
-
         62% 100%,
         50% 72%,
-
         42% 97%,
         41% 68%,
-
         17% 88%,
         32% 60%,
-
         0% 64%,
         28% 53%,
-
         4% 39%,
         30% 45%,
-
         15% 16%,
         39% 35%,
-
         50% 0%
     );
-
 }
-
-
-/* =========================================================
-   PRIMERA SILUETA
-   ========================================================= */
 
 .estrella-sombra-1 {
-
     background-color: rgba(98, 83, 109, 0.30);
-
     transform: translate(5px, 5px);
-
     z-index: 1;
-
 }
-
-
-/* =========================================================
-   SEGUNDA SILUETA
-   ========================================================= */
 
 .estrella-sombra-2 {
-
     background-color: rgba(136, 123, 145, 0.16);
-
     transform: translate(9px, 9px);
-
     z-index: 0;
-
 }
 
 
 /* =========================================================
-   EFECTO HOVER DE LAS ESTRELLAS
+   EFECTO HOVER
    ========================================================= */
 
 .estrella:hover {
-
     transform: scale(1.04);
-
 }
 
 
 /* =========================================================
-   TEXTO DENTRO DE LAS ESTRELLAS
+   TEXTO DE LAS ESTRELLAS
    ========================================================= */
 
 .estrella span {
-
     display: block;
-
     line-height: 1.2;
-
 }
 
 
 /* =========================================================
-   CUADRO DE TEXTO DE CADA PROYECTO
+   DESCRIPCIÓN DE CADA PROYECTO
    ========================================================= */
 
-/*
-   AQUÍ SE CONTROLA EL PEQUEÑO CUADRO QUE APARECE
-   DEBAJO DE CADA ESTRELLA.
-
-   La fuente es Oswald y el tamaño es 12px.
-
-   El texto que escribas en el HTML aparecerá
-   automáticamente dentro de este cuadro.
-*/
-
 .descripcion-proyecto {
-
-    /*
-        ANCHO DEL CUADRO
-    */
-
     width: 180px;
-
-    /*
-        ALTURA MÍNIMA
-
-        Puede crecer si escribes más texto.
-    */
-
     min-height: 30px;
-
-    /*
-        Espacio interior.
-    */
 
     padding: 5px 8px;
 
-    /*
-        Fondo ligeramente translúcido para mantener
-        visible la imagen de fondo.
-    */
-
     background-color: rgba(231, 220, 237, 0.70);
 
-    /*
-        Tipografía.
-    */
-
     font-family: "Oswald", sans-serif;
-
     font-size: 12px;
-
     font-weight: 400;
-
     line-height: 1.25;
 
     color: #302140;
-
-    /*
-        Centra el texto.
-    */
-
     text-align: center;
 
-    /*
-        Separación entre la estrella y el cuadro.
-    */
-
     margin-top: 10px;
-
 }
 
 
 /* =========================================================
-   EFECTO HOVER DEL CUADRO
-   ========================================================= */
-
-/*
-   El cuadro de información NO funciona como botón.
-   Por eso no tiene efecto de zoom.
-*/
-
-
-/* =========================================================
-   ADAPTACIÓN PARA PANTALLAS MEDIANAS
+   PANTALLAS MEDIANAS
    ========================================================= */
 
 @media (max-width: 900px) {
 
     header h1 {
-
         font-size: 45px;
-
         white-space: normal;
-
     }
-
 
     #informacion {
-
         flex-direction: column;
-
         align-items: center;
-
     }
-
 
     .texto-informacion {
-
         width: 80%;
-
     }
-
 
     #proyectos {
-
         grid-template-columns: repeat(2, 1fr);
-
     }
-
 
     #titulo-proyectos h2 {
-
         font-size: 32px;
-
     }
-
 }
 
 
 /* =========================================================
-   ADAPTACIÓN PARA CELULARES
+   CELULARES
    ========================================================= */
 
 @media (max-width: 600px) {
 
     header h1 {
-
         font-size: 32px;
-
     }
-
 
     #proyectos {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .texto-informacion {
-
         width: 90%;
-
     }
-
 
     #titulo-proyectos h2 {
-
         font-size: 25px;
-
     }
-
 }
